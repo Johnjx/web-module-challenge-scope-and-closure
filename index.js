@@ -30,11 +30,22 @@ console.log('example task:', processFirstItem(['foo','bar'],function(str){return
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+
+    A: The difference is that counter1 is a variable that acts as a reference to another function which itself contains a function
+    scoped variable and an inner function, while counter2 is a declared function that is acting on the count variable that lives
+    in its associated global scope.
+
   2. Which of the two uses a closure? How can you tell?
-  
+
+    A: counter1 uses a closure becuase it contains an inner function that is reaching outside of its scope to combine itself with the
+        lexical environment of the outer function. 
+
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?
+
+       A: counter1 would be better when we want our count variable to be stored in its memory, while
+       still having the referenced counterMaker function available to be utilized in another area of the code.
+       A: counter2 would be better when we want our count variable to not reset but rather keep accumulating during the running of our program.
 */
 
 // counter1 code
@@ -64,9 +75,11 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random() * 3);
 }
+
+//console.log(inning());
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
