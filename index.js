@@ -125,10 +125,15 @@ For example: invoking getInningScore(inning) might return this object:
   */
 
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(callBack) {
+  return {
+    Home: callBack(),
+    Away: callBack()
+  }
 
 }
+
+console.log('Task 4:', getInningScore(inning));
 
 
 /* STRETCH: ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
